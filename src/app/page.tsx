@@ -2,6 +2,7 @@
 
 import { Button } from "@/styles/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function HomePage() {
@@ -92,14 +93,14 @@ export default function HomePage() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.1, duration: 0.5 }}
       >
-        <a href="/project">
+        <Link href="/project">
           <Button
             className="bg-yellow-main hover:bg-modeText hover:text-yellow-main"
             variant="default"
           >
             See my dev work
           </Button>
-        </a>
+        </Link>
 
         <Button
           className="border-b-3 border-yellow-main dark:border-yellow-main"

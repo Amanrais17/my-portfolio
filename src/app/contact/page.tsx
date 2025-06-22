@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/styles/components/ui/button";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [messageCount, setMessageCount] = useState(0);
@@ -168,7 +169,7 @@ export default function ContactPage() {
             <div className="space-y-2">
               <h4 className="font-semibold uppercase text-xs">Socials</h4>
               <p>
-                <a href="https://www.instagram.com/m.n_says/">
+                <Link href="https://www.instagram.com/m.n_says/">
                   <Button
                     className="cursor-pointer text-[#f43f5e]"
                     variant="outline"
@@ -177,10 +178,10 @@ export default function ContactPage() {
                     <FaInstagram />
                     Instagram
                   </Button>
-                </a>
+                </Link>
               </p>
               <p>
-                <a href="https://www.linkedin.com/in/aman-raiswal/">
+                <Link href="https://www.linkedin.com/in/aman-raiswal/">
                   <Button
                     className="cursor-pointer text-[#0072B1]"
                     variant="outline"
@@ -189,7 +190,7 @@ export default function ContactPage() {
                     <FaLinkedin />
                     LinkedIn
                   </Button>
-                </a>
+                </Link>
               </p>
             </div>
             <div>
