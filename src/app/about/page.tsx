@@ -219,8 +219,8 @@ export default function AboutPage() {
                     B.Tech Graduation – GGSIPU
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Successfully completed my Bachelor's in Technology from Guru
-                    Gobind Singh Indraprastha University.
+                    Successfully completed my Bachelor&apos;s in Technology from
+                    Guru Gobind Singh Indraprastha University.
                   </p>
                 </div>
 
