@@ -1,142 +1,3 @@
-// "use client";
-
-// import AnimatedHeading from "@/components/AnimateHeading";
-// import Image from "next/image";
-// import { useState } from "react";
-
-// export default function ContactPage() {
-//   const [formData, setFormData] = useState({
-//     firstName: "",
-//     lastName: "",
-//     email: "",
-//     message: "",
-//   });
-//   const [errors, setErrors] = useState({
-//     firstName: "",
-//     email: "",
-//     message: "",
-//   });
-
-//   const [messageCount, setMessageCount] = useState(0);
-//   const [submitted, setSubmitted] = useState(false);
-
-//   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLAreaElement>) => {
-//     const {name, value} = e.target;
-
-//     setFormData = ((prev) => ({
-//       ...prev,
-//       [name]: value,
-//     }));
-
-//     if(name === "message"){
-//       setMessageCount(value.length);
-//     }
-//   };
-
-//   return (
-//     <section className="bg-white dark:bg-dark-mode text-black dark:text-modeText px-4 py-10 sm:px-8 md:px-20 lg:px-32">
-//       {/* Header */}
-//       <AnimatedHeading text="CONTACT" />
-
-//       {/* Subheader */}
-//       <div className="flex justify-between text-sm uppercase mt-2 mb-10 tracking-wide text-gray-600 dark:text-gray-300">
-//         <span>Got a project in mind?</span>
-//         <span>Don't hesitate to contact me</span>
-//         <span>Anytime</span>
-//       </div>
-
-//       {/* Main Content */}
-//       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-12">
-//         {/* Left: Contact Form */}
-//         <div>
-//           <h2 className="uppercase font-semibold mb-4 tracking-wide">
-//             Contact Form
-//           </h2>
-//           <form className="space-y-6">
-//             <div>
-//               <input
-//                 type="text"
-//                 placeholder="Your first name"
-//                 className="w-full border-0 border-b-2 border-dotted focus:outline-none bg-transparent py-2"
-//               />
-//             </div>
-//             <div>
-//               <input
-//                 type="text"
-//                 placeholder="Your last name (optional)"
-//                 className="w-full border-0 border-b-2 border-dotted text-sm focus:outline-none bg-transparent py-2"
-//               />
-//             </div>
-//             <div>
-//               <input
-//                 type="email"
-//                 placeholder="Your email"
-//                 className="w-full border-0 border-b-2 border-dotted focus:outline-none bg-transparent py-2"
-//               />
-//             </div>
-//             <div>
-//               <textarea
-//                 rows={4}
-//                 maxLength={300}
-//                 placeholder="Your message"
-//                 className="w-full border-0 border-b-2 border-dotted focus:outline-none bg-transparent py-2 resize-none"
-//                 onChange={(e) => setMessageCount(e.target.value.length)}
-//               />
-//               <div className="text-right text-xs text-gray-400 mt-1">
-//                 {messageCount}/300
-//               </div>
-//             </div>
-//             <button
-//               type="submit"
-//               className="uppercase tracking-widest font-medium mt-4 hover:underline"
-//             >
-//               Submit
-//             </button>
-//           </form>
-//         </div>
-
-//         {/* Right: Info & Photo */}
-//         <div className="flex flex-col items-center text-center md:items-end md:text-right">
-//           <Image
-//             src="/profile.png"
-//             alt="Aman"
-//             width={250}
-//             height={250}
-//             className="rounded-lg object-cover mb-4"
-//           />
-//           <h2 className="text-4xl font-signature text-yellow-main">
-//             Aman Raiswal
-//           </h2>
-
-//           <div className="mt-6 text-sm space-y-4">
-//             <div>
-//               <h4 className="font-semibold uppercase text-xs">
-//                 Contact Details
-//               </h4>
-//               <p>business.aman.2003@gmail.com</p>
-//             </div>
-//             <div>
-//               <h4 className="font-semibold uppercase text-xs">Socials</h4>
-//               <p>Instagram</p>
-//               <p>LinkedIn</p>
-//             </div>
-//             <div>
-//               <h4 className="font-semibold uppercase text-xs">Location</h4>
-//               <p>New Delhi, India</p>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Footer */}
-//       <div className="mt-16 flex justify-between text-xs text-gray-400 uppercase tracking-widest">
-//         <span>amanportfolio ©{new Date().getFullYear()}</span>
-//         <span>Privacy Policy</span>
-//       </div>
-//     </section>
-//   );
-// }
-
 "use client";
 
 import AnimatedHeading from "@/components/AnimateHeading";
@@ -159,7 +20,6 @@ export default function ContactPage() {
   });
   const [loading, setLoading] = useState(false);
 
-  // 👇 EmailJS config
   const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
   const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
   const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
@@ -184,12 +44,7 @@ export default function ContactPage() {
     setLoading(true);
 
     try {
-      const result = await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        formData,
-        PUBLIC_KEY
-      );
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY);
       toast.success("Message sent successfully!");
       confetti({
         particleCount: 150,
@@ -200,7 +55,7 @@ export default function ContactPage() {
       });
       setFormData({ firstName: "", lastName: "", email: "", message: "" });
       setMessageCount(0);
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -217,7 +72,7 @@ export default function ContactPage() {
       {/* Subheader */}
       <div className="flex justify-between text-sm uppercase mt-2 mb-10 tracking-wide text-gray-600 dark:text-gray-300 flex-wrap gap-2">
         <span>Got a project in mind?</span>
-        <span>Don't hesitate to contact me</span>
+        <span>Don&apos;t hesitate to contact me</span>
         <span>Anytime</span>
       </div>
 

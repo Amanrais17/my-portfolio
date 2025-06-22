@@ -23,7 +23,7 @@ const Header = () => {
         <div className="flex w-full items-center justify-between md:w-auto">
           {/* Logo */}
           <div className="flex flex-row space-x-1 items-center">
-            <a className="flex flex-row space-x-1" href="/">
+            <Link className="flex flex-row space-x-1" href="/">
               <motion.h1
                 className="text-4xl sm:text-5xl font-black text-yellow-main"
                 initial={{ y: -20, opacity: 0 }}
@@ -45,7 +45,7 @@ const Header = () => {
               >
                 R
               </motion.h1>
-            </a>
+            </Link>
           </div>
 
           {/* Hamburger + DarkModeButton for mobile */}

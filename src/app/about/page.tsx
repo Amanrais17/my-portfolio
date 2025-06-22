@@ -13,9 +13,6 @@ import {
 import { RiTailwindCssFill } from "react-icons/ri";
 import { JSX } from "react/jsx-runtime";
 import AnimatedHeading from "@/components/AnimateHeading";
-
-const letters = ["A", "B", "O", "U", "T"];
-
 export default function AboutPage() {
   const [showContent, setShowContent] = useState(false);
 
@@ -129,7 +126,7 @@ export default function AboutPage() {
               </div>
               <div className="w-full md:w-[60%] text-justify md:text-left">
                 <h2 className="text-2xl text-wrap sm:text-3xl font-bold mb-4 text-black dark:text-modeText">
-                  Hi, I'm Aman Raiswal
+                  Hi, I&apos;m Aman Raiswal
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-modeText">
                   A passionate full-stack developer driven by creativity and
