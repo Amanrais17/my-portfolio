@@ -102,13 +102,13 @@ export default function HomePage() {
           </Button>
         </Link>
 
-        <Button
+        {/* <Button
           className="border-b-3 border-yellow-main dark:border-yellow-main"
           variant="outline"
           disabled
         >
           Download CV
-        </Button>
+        </Button> */}
       </motion.div>
 
       {/* Images Section */}
