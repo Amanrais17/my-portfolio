@@ -105,6 +105,7 @@ export default function HomePage() {
         <Button
           className="border-b-3 border-yellow-main dark:border-yellow-main"
           variant="outline"
+          disabled
         >
           Download CV
         </Button>
