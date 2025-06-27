@@ -115,7 +115,7 @@ const Header = () => {
                   className={`block text-lg px-4 py-2 rounded dark:text-modeText ${
                     isActive
                       ? "bg-yellow-main text-modeText"
-                      : "text-yellow-main dark:text-modeText hover:bg-yellow-main hover:text-modeText"
+                      : "text-black dark:text-modeText hover:bg-yellow-main hover:text-modeText"
                   }`}
                 >
                   {label}

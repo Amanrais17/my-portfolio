@@ -216,11 +216,12 @@ export default function AboutPage() {
                     2024
                   </div>
                   <div className="text-lg font-medium text-black dark:text-white">
-                    B.Tech Graduation – GGSIPU
+                    BCA Graduation – GGSIPU
                   </div>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Successfully completed my Bachelor&apos;s in Technology from
-                    Guru Gobind Singh Indraprastha University.
+                    Bachelor of Computer Applications (BCA), Specialization in
+                    Web Applications JIMS, Rohini Sector-5 | Affiliated to
+                    GGSIPU, Dwarka
                   </p>
                 </div>
 
